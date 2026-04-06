@@ -9,8 +9,6 @@ extends Control
 var reveal_step: float = 0.1
 var reveal_radius: float = 0.1
 
-var health = 100
-
 var questions = [
 	{"image": "res://assets/Paintings/The milkmaid.png", "answer": "the milkmaid"},
 	{"image": "res://assets/Paintings/The Night Watch.png", "answer": "the night watch"},
@@ -54,7 +52,6 @@ func check_answer(answer: String):
 	else:
 		feedback_label.text = "❌ Wrong! Revealing more..."
 		reveal_more()
-		take_damage(10)
 
 func reveal_more():
 	reveal_radius += reveal_step
@@ -63,18 +60,6 @@ func reveal_more():
 	var tween = create_tween()
 	tween.tween_property(image_display.material, "shader_parameter/reveal_radius", reveal_radius, 0.5)
 
-func update_health():
-	$HealthBar.value = health
-
-func take_damage(amount):
-	health -= amount
-	update_health()
-	if health <= 0:
-		game_over()
-
-func game_over():
-	$Label.text = "Game Over!"
-	$Button.disabled = true
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
