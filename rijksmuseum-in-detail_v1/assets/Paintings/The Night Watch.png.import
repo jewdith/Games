@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gbsji5g3w52m"
-path="res://.godot/imported/The Night Watch.png-150506f66c8def229473ed61ecff2c3a.ctex"
+path="res://.godot/imported/The Night Watch.png-6501d0d26bf0f0c2f1dea11bbf9bebdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Paintings/The Night Watch.png"
-dest_files=["res://.godot/imported/The Night Watch.png-150506f66c8def229473ed61ecff2c3a.ctex"]
+source_file="res://assets/paintings/The Night Watch.png"
+dest_files=["res://.godot/imported/The Night Watch.png-6501d0d26bf0f0c2f1dea11bbf9bebdb.ctex"]
 
 [params]
 
