@@ -95,3 +95,4 @@ func reveal_more():
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	queue_free()

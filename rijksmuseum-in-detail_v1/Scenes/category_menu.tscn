@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://bry46463kfw85"]
+
+[ext_resource type="Script" uid="uid://cfhd7qy54hmdx" path="res://Scripts/category_menu.gd" id="1_qu26o"]
+[ext_resource type="Texture2D" uid="uid://ca7c1u5tnq1cr" path="res://assets/mainmenu/menu 2.jpg" id="2_7ma45"]
+
+[sub_resource type="GDScript" id="GDScript_7ma45"]
+script/source = "extends Control
+
+#func _ready():
+	#$CategoryControlMenu/CenterContainer/CatButtons/Cat1Button.pressed.connect(func(): start_game(\"cat1\"))
+	#$CategoryControlMenu/CenterContainer/CatButtons/Cat2Button.pressed.connect(func(): start_game(\"cat2\"))
+#
+#func start_game(category: String):
+	#var game_scene = load(\"res://Scenes/guessing_game.tscn\").instantiate()
+	#game_scene.selected_category = category
+	#get_tree().root.add_child(game_scene)
+	#queue_free()
+"
+
+[sub_resource type="Theme" id="Theme_8s1cg"]
+
+[node name="CategoryMenu" type="Node2D"]
+script = ExtResource("1_qu26o")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.0
+offset_top = 786.0
+offset_right = 2063.0
+offset_bottom = 1059.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 180
+text = "RIJKSMUSEUM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -4000
+position = Vector2(964, 538)
+scale = Vector2(1.9333333, 1.556196)
+texture = ExtResource("2_7ma45")
+
+[node name="CategoryControlMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_7ma45")
+
+[node name="CenterContainer" type="CenterContainer" parent="CategoryControlMenu"]
+layout_mode = 0
+offset_left = 637.0
+offset_top = 424.0
+offset_right = 1337.0
+offset_bottom = 728.0
+theme = SubResource("Theme_8s1cg")
+
+[node name="CatButtons" type="MenuButton" parent="CategoryControlMenu/CenterContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+autowrap_mode = 2
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Cat1Button" type="Button" parent="CategoryControlMenu/CenterContainer/CatButtons"]
+modulate = Color(0.89411765, 1, 1, 1)
+self_modulate = Color(0.96862745, 1, 1, 1)
+layout_mode = 0
+offset_left = -105.0
+offset_top = -98.0
+offset_right = 95.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.6313726)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 5
+theme_override_font_sizes/font_size = 45
+text = "C1"
+autowrap_trim_flags = 0
+icon_alignment = 1
+
+[node name="Cat2Button" type="Button" parent="CategoryControlMenu/CenterContainer/CatButtons"]
+modulate = Color(0.89411765, 1, 1, 1)
+self_modulate = Color(0.96862745, 1, 1, 1)
+layout_mode = 0
+offset_left = -104.0
+offset_top = 10.0
+offset_right = 96.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.6313726)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/h_separation = 5
+theme_override_font_sizes/font_size = 45
+text = "C2
+"
+autowrap_trim_flags = 0
+icon_alignment = 1

@@ -3,7 +3,7 @@ extends Node2D
 @onready var start_button: Button = $CenterContainer/MainButtons/StartButton
 @onready var quit_button: Button = $CenterContainer/MainButtons/QuitButton
 
-const GUESS_GAME_SCENE = "res://Scenes/guessing_game.tscn"
+const GUESS_GAME_SCENE = "res://Scenes/category_menu.tscn"
 
 func _ready():
 	start_button.pressed.connect(_on_start_pressed)

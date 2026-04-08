@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr1ak1i03y1hc"]
+[gd_scene load_steps=5 format=3 uid="uid://bry46463kfw85"]
 
-[ext_resource type="Script" uid="uid://c0fpgeomdex5g" path="res://Scripts/main_menu_node.gd" id="1_duh7t"]
-[ext_resource type="Texture2D" uid="uid://ca7c1u5tnq1cr" path="res://assets/mainmenu/menu 2.jpg" id="2_6ymyu"]
+[ext_resource type="Texture2D" uid="uid://ca7c1u5tnq1cr" path="res://assets/mainmenu/menu 2.jpg" id="2_7ma45"]
+[ext_resource type="Script" uid="uid://c03rpgvir1m4y" path="res://Scripts/category_menu_control.gd" id="2_qu26o"]
 
-[sub_resource type="Theme" id="Theme_06t4h"]
+[sub_resource type="GDScript" id="GDScript_qu26o"]
+script/source = "extends Node2D
+"
 
-[node name="MainMenu" type="Node2D"]
-script = ExtResource("1_duh7t")
+[sub_resource type="Theme" id="Theme_8s1cg"]
+
+[node name="CategoryMenu" type="Node2D"]
+script = SubResource("GDScript_qu26o")
 
 [node name="Title" type="Label" parent="."]
 anchors_preset = 5
@@ -22,21 +26,35 @@ text = "RIJKSMUSEUM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -4000
+position = Vector2(964, 538)
+scale = Vector2(1.9333333, 1.556196)
+texture = ExtResource("2_7ma45")
+
+[node name="CategoryControlMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_qu26o")
+
+[node name="CenterContainer" type="CenterContainer" parent="CategoryControlMenu"]
+layout_mode = 0
 offset_left = 637.0
 offset_top = 424.0
 offset_right = 1337.0
 offset_bottom = 728.0
-theme = SubResource("Theme_06t4h")
+theme = SubResource("Theme_8s1cg")
 
-[node name="MainButtons" type="MenuButton" parent="CenterContainer"]
+[node name="CatButtons" type="MenuButton" parent="CategoryControlMenu/CenterContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 autowrap_mode = 2
 autowrap_trim_flags = 0
 icon_alignment = 1
 
-[node name="StartButton" type="Button" parent="CenterContainer/MainButtons"]
+[node name="Cat1Button" type="Button" parent="CategoryControlMenu/CenterContainer/CatButtons"]
 modulate = Color(0.89411765, 1, 1, 1)
 self_modulate = Color(0.96862745, 1, 1, 1)
 layout_mode = 0
@@ -50,11 +68,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 5
 theme_override_font_sizes/font_size = 45
-text = "START"
+text = "C1"
 autowrap_trim_flags = 0
 icon_alignment = 1
 
-[node name="QuitButton" type="Button" parent="CenterContainer/MainButtons"]
+[node name="Cat2Button" type="Button" parent="CategoryControlMenu/CenterContainer/CatButtons"]
 modulate = Color(0.89411765, 1, 1, 1)
 self_modulate = Color(0.96862745, 1, 1, 1)
 layout_mode = 0
@@ -68,17 +86,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 5
 theme_override_font_sizes/font_size = 45
-text = "QUIT
+text = "C2
 "
 autowrap_trim_flags = 0
 icon_alignment = 1
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -4000
-position = Vector2(964, 538)
-scale = Vector2(1.9333333, 1.556196)
-texture = ExtResource("2_6ymyu")
-
-[connection signal="pressed" from="CenterContainer/MainButtons/StartButton" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CenterContainer/MainButtons/QuitButton" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CenterContainer/MainButtons/QuitButton" to="." method="_on_credits_pressed"]
