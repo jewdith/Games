@@ -6,6 +6,7 @@ extends Control
 @onready var submit_button: Button = $SubmitButton
 @onready var feedback_label: Label = $FeedbackLabel
 @onready var back_button: Button = $BackButton
+@onready var next_button: Button = $NextButton
 
 #Hou score bij
 @onready var score_label = $ScoreLabel 
@@ -19,6 +20,7 @@ var reveal_radius: float = 0.1
 var current_question = {}
 var questions = [
 	{"image": "res://assets/Paintings/The milkmaid.png", "answer": "1", "category": "voc"},
+	{"image": "res://assets/paintings/aaaa.png", "answer": "1", "category": "voc"},
 	{"image": "res://assets/Paintings/The Night Watch.png", "answer": "2", "category": "bil"},
 	{"image": "res://assets/Paintings/The Threatened Swan.png", "answer": "3", "category": "kind"}
 ]
@@ -30,7 +32,7 @@ var filtered_questions = []
 func _ready():
 	submit_button.pressed.connect(_on_submit_pressed)
 	back_button.pressed.connect(_on_back_pressed)
-	print("Selected category:", selected_category)
+	next_button.pressed.connect(_on_next_pressed)
 	filter_questions()
 	start_new_round()
 	update_score_display()
@@ -58,6 +60,9 @@ func start_new_round():
 		mat.shader = shader
 		image_display.material = mat
 	update_shader()
+
+func _on_next_pressed():
+	start_new_round()
 
 func update_shader():
 	var mat = image_display.material
