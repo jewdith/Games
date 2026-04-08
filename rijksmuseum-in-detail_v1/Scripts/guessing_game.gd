@@ -59,6 +59,9 @@ func start_new_round():
 		var mat = ShaderMaterial.new()
 		mat.shader = shader
 		image_display.material = mat
+		
+		var random_center = Vector2(randf_range(0.5, 0.3),randf_range(0.9, 0.9))
+		image_display.material.set_shader_parameter("reveal_center", random_center)
 	update_shader()
 
 func _on_next_pressed():
@@ -68,6 +71,17 @@ func update_shader():
 	var mat = image_display.material
 	mat.set_shader_parameter("reveal_radius", reveal_radius)
 
+#animate reveal
+var time_passed: float = 0.5
+var move_speed: float = 0.5
+
+func _process(delta):
+	time_passed += delta * move_speed
+	var x = 0.5 + 0.3 * sin(time_passed)
+	var y = 0.5 + 0.3 * cos(time_passed)
+	
+	image_display.material.set_shader_parameter("reveal_center", Vector2(x, y))
+	
 #beoordeel gebruiker input
 func _on_submit_pressed():
 	check_answer(answer_input.text)
@@ -77,7 +91,8 @@ func check_answer(answer: String):
 	if answer.strip_edges().to_lower() == correct.to_lower():
 		feedback_label.text = "✅ Correct!"
 		score += 1
-		
+		reveal_radius = 1.0
+		update_shader()
 	else:
 		feedback_label.text = "❌ Wrong! Revealing more..."
 		reveal_more()

@@ -6,6 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gxyy"]
 shader = ExtResource("2_0gxyy")
 shader_parameter/reveal_radius = 0.0
+shader_parameter/reveal_center = Vector2(0.5, 0.5)
 
 [sub_resource type="GDScript" id="GDScript_68t4e"]
 
@@ -16,6 +17,12 @@ script = SubResource("GDScript_68t4e")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_0gxyy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1069.0
+color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 2
