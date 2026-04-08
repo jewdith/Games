@@ -18,9 +18,9 @@ var reveal_radius: float = 0.1
 #vragen reeks. uitbreiden waar nodig is. 
 var current_question = {}
 var questions = [
-	{"image": "res://assets/Paintings/The milkmaid.png", "answer": "1", "category": "cat1"},
-	{"image": "res://assets/Paintings/The Night Watch.png", "answer": "2", "category": "cat2"},
-	{"image": "res://assets/Paintings/The Threatened Swan.png", "answer": "3", "category": "cat3"}
+	{"image": "res://assets/Paintings/The milkmaid.png", "answer": "1", "category": "voc"},
+	{"image": "res://assets/Paintings/The Night Watch.png", "answer": "2", "category": "bil"},
+	{"image": "res://assets/Paintings/The Threatened Swan.png", "answer": "3", "category": "kind"}
 ]
 
 var selected_category: String = ""

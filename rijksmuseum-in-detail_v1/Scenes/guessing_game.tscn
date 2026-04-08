@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bi0vwsdx0y340"]
 
-[ext_resource type="Script" uid="uid://b44lsgsdtjk7w" path="res://Scenes/guessing_game.gd" id="1_0gxyy"]
+[ext_resource type="Script" uid="uid://b44lsgsdtjk7w" path="res://Scripts/guessing_game.gd" id="1_0gxyy"]
 [ext_resource type="Shader" uid="uid://cyt0v4su8uuu6" path="res://assets/shaders/center_reveal.gdshader" id="2_0gxyy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0gxyy"]
