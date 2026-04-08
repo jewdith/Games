@@ -89,7 +89,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 5
 theme_override_font_sizes/font_size = 20
-text = "VOC mentaliteit"
+text = "VOC mentality"
 autowrap_trim_flags = 0
 icon_alignment = 1
 
@@ -115,7 +115,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 5
 theme_override_font_sizes/font_size = 15
-text = "Billen door de eeuwen heen
-"
+text = "Butts through the ages"
 autowrap_trim_flags = 0
 icon_alignment = 1
