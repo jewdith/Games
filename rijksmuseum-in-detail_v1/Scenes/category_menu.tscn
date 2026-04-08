@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bry46463kfw85"]
+[gd_scene load_steps=7 format=3 uid="uid://bry46463kfw85"]
 
 [ext_resource type="Script" uid="uid://cfhd7qy54hmdx" path="res://Scripts/category_menu.gd" id="1_qu26o"]
 [ext_resource type="Texture2D" uid="uid://ca7c1u5tnq1cr" path="res://assets/mainmenu/menu 2.jpg" id="2_7ma45"]
 [ext_resource type="Texture2D" uid="uid://gbsji5g3w52m" path="res://assets/paintings/The Night Watch.png" id="3_7ma45"]
 [ext_resource type="Texture2D" uid="uid://3mg3xl44t60q" path="res://assets/paintings/aaaa.png" id="4_ouusm"]
-[ext_resource type="Texture2D" uid="uid://dgf315obmes8a" path="res://assets/paintings/download (1).png" id="5_inlme"]
 
 [sub_resource type="GDScript" id="GDScript_7ma45"]
 script/source = "extends Control
@@ -118,33 +117,5 @@ theme_override_constants/h_separation = 5
 theme_override_font_sizes/font_size = 15
 text = "Billen door de eeuwen heen
 "
-autowrap_trim_flags = 0
-icon_alignment = 1
-
-[node name="Cat3Image" type="TextureRect" parent="CategoryControlMenu/CenterContainer/CatButtons"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = -150.0
-offset_right = 191.0
-offset_bottom = 14.0
-texture = ExtResource("5_inlme")
-expand_mode = 1
-
-[node name="Cat3Button" type="Button" parent="CategoryControlMenu/CenterContainer/CatButtons/Cat3Image"]
-modulate = Color(0.89411765, 1, 1, 1)
-self_modulate = Color(0.96862745, 1, 1, 1)
-layout_mode = 0
-offset_left = 34.0
-offset_top = 1.0
-offset_right = 172.0
-offset_bottom = 166.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
-theme_override_constants/h_separation = 5
-theme_override_font_sizes/font_size = 15
-text = "Kindertekeningen"
-flat = true
 autowrap_trim_flags = 0
 icon_alignment = 1
